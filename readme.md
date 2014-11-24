@@ -1,7 +1,7 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V0.1.3-alpha  
+Master: V0.1.4-alpha  
 
 [![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) [![Coverage Status](https://img.shields.io/coveralls/neilstuartcraig/TDPAHSessionPlugin.svg)](https://coveralls.io/r/neilstuartcraig/TDPAHSessionPlugin) 
 [![Dependency Status](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin.svg)](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin) 
@@ -13,8 +13,14 @@ A simple session data handler for the [actionhero](https://github.com/evantahler
 TDPAHSessionPlugin is designed specifically for use with the actionHero API framework and thus is unlikely to work directly with any other application. You're welcome to fork and modify of course if that is of interest of course.
 
 ##Features
+* Really simple to use, just store your data in an object (a sub-object of the actionhero `connection` object) and the plugin will handle the rest automatically
 * Uses the built-in Redis cache in actionhero
-* Very simople to use, minimal (if any) configuration needed
+* Uses the existing `connection.fingerpint` (or `connection.id` if the fingerprint doesn't exist) to provide session uniqueness
+* Very simple to use, minimal (if any) configuration needed
+* Configurable:
+    * Session key prefix (default: "session_")
+    * `connection` sub-object name (default: "sessionData")
+    * Session expiration time (default: 1200 seconds - 20 minutes)
 * Asynchronous operation throughout
 * Included unit tests, automatically run via Travis-CI
 * Included default actions for automated testing
@@ -123,12 +129,6 @@ All public methods conform to the below principals:
 * All arguments are required
 
 
-
-
-
-save(connection, next, callback)
-destroy(connection, next, callback)
-
 ###load(connection, next, callback)
 Load any existing session data (onto the configured sub-object of the `connection` object).
 
@@ -145,7 +145,46 @@ The callback function to execute on completion of this function.
 ####Returns (callback arguments)
 The callback function currently receives two arguments:
 * `err` (string || null) - A descriptive error or `null` if no error occurred
-* `sessionData` (object | null) - the loaded sessionData object (or `null` if an error occurred)
+* `sessionData` (object || null) - the loaded sessionData object (or `null` if an error occurred)
+
+
+
+###save(connection, next, callback)
+Save session data (from the configured sub-object of the `connection` object) to the storage backend (redis).
+
+####Arguments
+#####connection (object)
+The actionhero `connection` object
+
+#####next (string)
+The actionhero `next()` function
+
+#####callback (function)
+The callback function to execute on completion of this function. 
+
+####Returns (callback arguments)
+The callback function currently receives two arguments:
+* `err` (string || null) - A descriptive error or `null` if no error occurred
+* `success` (boolean || null) - true on success (or `null` if an error occurred)
+
+
+###destroy(connection, next, callback)
+Destroy session data in the storage backend (redis).
+
+####Arguments
+#####connection (object)
+The actionhero `connection` object
+
+#####next (string)
+The actionhero `next()` function
+
+#####callback (function)
+The callback function to execute on completion of this function. 
+
+####Returns (callback arguments)
+The callback function currently receives two arguments:
+* `err` (string || null) - A descriptive error or `null` if no error occurred
+* `success` (boolean || null) - true on success (or `null` if an error occurred)
 
 
 
