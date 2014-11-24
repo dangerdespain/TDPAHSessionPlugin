@@ -1,7 +1,7 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V0.1.0-alpha  
+Master: V0.1.1-alpha  
 
 [![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) [![Coverage Status](https://img.shields.io/coveralls/neilstuartcraig/TDPAHSessionPlugin.svg)](https://coveralls.io/r/neilstuartcraig/TDPAHSessionPlugin) 
 [![Dependency Status](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin.svg)](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin) 
@@ -125,29 +125,27 @@ All public methods conform to the below principals:
 
 
 
-load(connection, next, callback)
+
 save(connection, next, callback)
 destroy(connection, next, callback)
 
-###roleHasPermissionsOnAction(role, actionName, actionVersion, callback)
-Determine whether a user (via their assigned role) has permission to run the requested resource (action) via the action name and version.
+###load(connection, next, callback)
+Load any existing session data (onto the configured sub-object of the `connection` object).
 
 ####Arguments
-#####role (string)
-The role of the user requesting the resource
+#####connection (object)
+The actionhero `connection` object
 
-#####actionName (string)
-The action name of the resource (API endpoint/method) the user is requesting
-
-#####actionVersion (string)
-The action version (in `semver` format) of the resource (API endpoint/method) the user is requesting
+#####next (string)
+The actionhero `next()` function
 
 #####callback (function)
 The callback function to execute on completion of this function. 
 
 ####Returns (callback arguments)
-The callback function currently receives only one argument:
-* `success` (boolean) - true if the user role *does* have permission on the requested resource/version
+The callback function currently receives two arguments:
+* `err` (string || null) - A descriptive error or `null` if no error occurred
+* `sessionData` (object | null) - the loaded sessionData object (or `null` if an error occurred)
 
 
 

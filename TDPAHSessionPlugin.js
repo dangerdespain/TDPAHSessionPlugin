@@ -15,11 +15,6 @@ var TDPAHSessionPlugin=function(api)
 	
 	var getSessionKey=function(connection, callback)
 	{
-
-console.log("get key");
-console.dir(connection);
-
-
 		var err=null;
 		var ret=null;
 		var id=connection.fingerprint || connection.id || null;
@@ -74,10 +69,6 @@ console.dir(connection);
 	// Load any existing session data
 	this.load=function loadFn(connection, next, callback)
 	{
-
-// console.log("LOAD: ");
-// console.dir(connection);
-
 		getSessionKey(connection, function(err, sessionKey)
 		{
 			getSessionTTL(function(err, sessionTTL)
@@ -115,10 +106,6 @@ console.dir(connection);
 	// Save new session data, merging onto existing data
 	this.save=function saveFn(connection, next, callback)
 	{
-
-console.log("SAVE: ");
-console.dir(connection);
-
 		getSessionKey(connection, function(err, sessionKey)
 		{
 			getSessionTTL(function(err, sessionTTL)
