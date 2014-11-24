@@ -1,0 +1,44 @@
+{
+	"author":
+	{
+		"name": "Neil Craig",
+		"email": "neil.craig@thedotproduct.org",
+		"website": "https://thedotproduct.org"
+	},
+	"name": "tdp-ah-session",
+	"description": "A simple session data handler for the actionhero API framework which uses the built-in Redis backend.",
+	"version": "0.1.0-alpha",
+	"repository": 
+	{
+		"type":"git",
+		"url": "git://github.com/neilstuartcraig/TDPAHSessionPlugin.git"
+	},
+	"keywords":
+	[
+		"session",
+		"sessions",		
+		"redis",
+		"actionhero",
+		"actionherojs",
+		"web sockets",
+		"websockets",
+		"api"
+	  ],	 
+	"main": "./TDPAHSession.js",
+	"dependencies": {
+	},
+	"devDependencies": {
+		"mocha": "latest",
+		"should": "latest",
+		"actionhero":"latest"
+	},
+	"optionalDependencies": {},
+	"engines":
+	{
+	  "node": ">=0.10.x"
+	},
+	"scripts":
+	{
+		"postinstall": ""
+	}
+}
