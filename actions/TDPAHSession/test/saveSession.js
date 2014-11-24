@@ -16,14 +16,11 @@ action.outputExample = {
 // functional
 action.run = function(api, connection, next)
 {
+	// NOTE: Don't ever just save user-supplied data anywhere, sanitise it first!
+	connection.sessionData=connection.params.t;
+	connection.response.sessionData=connection.sessionData;
 
-console.dir(connection.params);
-
-  connection.sessionData=connection.params.t;
-
-  connection.response.sessionData=connection.sessionData;
-
-  next(connection, true);
+	next(connection, true);
 };
 
 /////////////////////////////////////////////////////////////////////
