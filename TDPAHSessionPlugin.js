@@ -84,14 +84,9 @@ var TDPAHSessionPlugin=function(api)
 						if(err)
 						{
 	// TODO Might be best to handle any errors internally here - returning an error object
-
-							// Ensure sessionData is null if an error occurred			
-							sessionData=null;	
 						}
-						else
-						{
-							sessionData=sessionData || {};
-						}
+						
+						sessionData=sessionData || {};
 
 						// Copy the session data onto the configured sub-object of connection
 						connection[config.sessionDataObjectNameOnConnection]=sessionData;
