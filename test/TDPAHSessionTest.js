@@ -29,25 +29,26 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
   // We need this var in scope for the two tests below
   var ts=null;
 
-  it("Should allow the default (public) role to call TDPAHSession", function(done)
+  it("Should save the current unix timestamp onto the session", function(done)
   {
       api.specHelper.runAction('TDPAHSession/test/saveTimestamp', {}, function(response, connection)
       {
         ts=response.ts;
-        response.ts.should.be.an.type("integer");
-        done();
-      });
-  });
-
-  it("Should allow the default (public) role to call TDPAHSession", function(done)
-  {
-      api.specHelper.runAction('TDPAHSession/test/loadTimestamp', {}, function(response, connection)
-      {
-        response.ts.should.be.an.type("integer");
-        response.ts.should.eql(ts);
+        response.sessionData.ts.should.be.type("number");
 
         done();
       });
   });
+
+  // it("Should load the session data from redis successfully", function(done)
+  // {
+  //     api.specHelper.runAction('TDPAHSession/test/loadTimestamp', {}, function(response, connection)
+  //     {
+  //       response.ts.should.be.an.type("integer");
+  //       response.ts.should.eql(ts);
+
+  //       done();
+  //     });
+  // });
 
 });
