@@ -4,7 +4,7 @@ var should = require('should');
 var actionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new actionheroPrototype();
 var api;
-
+var conn;
 
 describe('actionhero plugin ah-tdp-session-plugin tests', function()
 {
@@ -14,6 +14,9 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
     actionhero.start(function(err, a)
     {
       api = a;
+
+      conn=new api.specHelper.connection();
+
       done();
     })
   });
@@ -31,21 +34,34 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
 
   it("Should save the current unix timestamp onto the session", function(done)
   {
-      api.specHelper.runAction('TDPAHSession/test/saveTimestamp', {}, function(response, connection)
+      api.specHelper.runAction('TDPAHSession/test/saveTimestamp', conn, function(response, connection)
       {
-        ts=response.ts;
+        ts=response.sessionData.ts;
+
         response.sessionData.ts.should.be.type("number");
+        done();
+      });
+  });
+
+  it("Should load the session data from redis successfully", function(done)
+  {
+      api.specHelper.runAction('TDPAHSession/test/loadTimestamp', conn, function(response, connection)
+      {
+        response.sessionData.ts.should.be.type("number");
+        response.sessionData.ts.should.eql(ts);
 
         done();
       });
   });
 
-  // it("Should load the session data from redis successfully", function(done)
+
+// TODO: Add a destroy() test
+  // it("Should destroy the session data from redis successfully", function(done)
   // {
-  //     api.specHelper.runAction('TDPAHSession/test/loadTimestamp', {}, function(response, connection)
+  //     api.specHelper.runAction('TDPAHSession/test/loadTimestamp', conn, function(response, connection)
   //     {
-  //       response.ts.should.be.an.type("integer");
-  //       response.ts.should.eql(ts);
+  //       response.sessionData.ts.should.be.type("number");
+  //       response.sessionData.ts.should.eql(ts);
 
   //       done();
   //     });
