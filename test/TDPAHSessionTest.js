@@ -61,7 +61,7 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
   // We need this var in scope for the two tests below
   var ts=null;
 
-  it("Should save the current unix timestamp onto the session", function(done)
+  it("Should save a data object onto the session", function(done)
   {
       api.specHelper.runAction('TDPAHSession/test/saveSession', conn, function(response, connection)
       {
@@ -70,7 +70,7 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
       });
   });
 
-  it("Should load the session data from redis successfully", function(done)
+  it("Should load data from redis successfully", function(done)
   {
       api.specHelper.runAction('TDPAHSession/test/loadSession', conn, function(response, connection)
       {

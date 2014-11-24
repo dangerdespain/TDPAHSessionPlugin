@@ -3,13 +3,14 @@ var action = {};
 /////////////////////////////////////////////////////////////////////
 // metadata
 action.name = 'TDPAHSession/test/loadSession';
-action.description = 'I load session data';
+action.description = 'I load session data from the cache';
 action.inputs = {
   'required' : [],
   'optional' : []
 };
-action.blockedConnectionTypes = [];
-action.outputExample = {
+action.blockedConnectionTypes=[];
+action.outputExample=
+{
 }
 
 /////////////////////////////////////////////////////////////////////

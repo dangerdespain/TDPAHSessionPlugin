@@ -3,8 +3,9 @@ var action = {};
 /////////////////////////////////////////////////////////////////////
 // metadata
 action.name = 'TDPAHSession/test/saveSession';
-action.description = 'I save a timestamp onto the session';
-action.inputs = {
+action.description = 'I save a data object onto the session';
+action.inputs =
+{
   'required' : ["t"],
   'optional' : []
 };

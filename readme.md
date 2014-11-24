@@ -1,7 +1,7 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V0.1.9-alpha  
+Master: V0.1.10-alpha  
 
 [![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) [![Coverage Status](https://img.shields.io/coveralls/neilstuartcraig/TDPAHSessionPlugin.svg)](https://coveralls.io/r/neilstuartcraig/TDPAHSessionPlugin) 
 [![Dependency Status](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin.svg)](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin) 
@@ -15,7 +15,7 @@ TDPAHSessionPlugin is designed specifically for use with the actionHero API fram
 ##Features
 * Really simple to use, just store your data in an object (a sub-object of the actionhero `connection` object) and the plugin will handle the rest automatically
 * Uses the built-in Redis cache in actionhero
-* Uses the existing `connection.fingerpint` (or `connection.id` if the fingerprint doesn't exist) to provide session uniqueness
+* Uses the existing `connection.fingerpint` (or `connection.id` if the fingerprint doesn't exist) as the session identifier
 * Very simple to use, minimal (if any) configuration needed
 * Configurable:
     * Session key prefix (default: "session_")
@@ -186,6 +186,12 @@ The callback function currently receives two arguments:
 * `err` (string || null) - A descriptive error or `null` if no error occurred
 * `success` (boolean || null) - true on success (or `null` if an error occurred)
 
+
+##To do/roadmap
+* Include the `destroy()` method in the unit tests
+* Consider sanitising input (at least as an option)
+* Consider adding a dedicated storage layer (option) to enable better security through segregation
+* Consider encryption of session data
 
 
 ##Tests
