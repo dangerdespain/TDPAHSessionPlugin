@@ -1,10 +1,34 @@
 process.env.NODE_ENV = 'test';
 
 var should = require('should');
+var assert = require('assert');
+
 var actionheroPrototype = require('actionhero').actionheroPrototype;
 var actionhero = new actionheroPrototype();
 var api;
 var conn;
+
+
+var testObj=
+{
+  str:"This is a string",
+  integer:Date.now(),
+  floatingPoint:3.14159,
+  bool:true,
+  obj:
+  {
+    a:"b",
+    c:"d"
+  },
+  arr:
+  [
+    "a",
+    "b",
+    "c"
+  ]
+};
+
+var i;
 
 describe('actionhero plugin ah-tdp-session-plugin tests', function()
 {
@@ -16,6 +40,11 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
       api = a;
 
       conn=new api.specHelper.connection();
+
+      conn.params=
+      {
+        t:testObj
+      };
 
       done();
     })
@@ -34,22 +63,18 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
 
   it("Should save the current unix timestamp onto the session", function(done)
   {
-      api.specHelper.runAction('TDPAHSession/test/saveTimestamp', conn, function(response, connection)
+      api.specHelper.runAction('TDPAHSession/test/saveSession', conn, function(response, connection)
       {
-        ts=response.sessionData.ts;
-
-        response.sessionData.ts.should.be.type("number");
+        assert.deepEqual(response.sessionData, testObj);
         done();
       });
   });
 
   it("Should load the session data from redis successfully", function(done)
   {
-      api.specHelper.runAction('TDPAHSession/test/loadTimestamp', conn, function(response, connection)
+      api.specHelper.runAction('TDPAHSession/test/loadSession', conn, function(response, connection)
       {
-        response.sessionData.ts.should.be.type("number");
-        response.sessionData.ts.should.eql(ts);
-
+        assert.deepEqual(response.sessionData, testObj);
         done();
       });
   });

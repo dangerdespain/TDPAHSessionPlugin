@@ -2,26 +2,28 @@ var action = {};
 
 /////////////////////////////////////////////////////////////////////
 // metadata
-action.name = 'TDPAHSession/test/loadTimestamp';
+action.name = 'TDPAHSession/test/saveSession';
 action.description = 'I save a timestamp onto the session';
 action.inputs = {
-  'required' : [],
+  'required' : ["t"],
   'optional' : []
 };
 action.blockedConnectionTypes = [];
 action.outputExample = {
-  status: 'OK',
-  uptime: 1234,
-  stats: {}
 }
 
 /////////////////////////////////////////////////////////////////////
 // functional
 action.run = function(api, connection, next)
 {
-	connection.response.sessionData=connection.sessionData;
 
-	next(connection, true);
+console.dir(connection.params);
+
+  connection.sessionData=connection.params.t;
+
+  connection.response.sessionData=connection.sessionData;
+
+  next(connection, true);
 };
 
 /////////////////////////////////////////////////////////////////////
