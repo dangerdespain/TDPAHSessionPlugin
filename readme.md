@@ -1,7 +1,7 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V0.1.10-alpha  
+Master: V0.1.11-alpha  
 
 [![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) [![Coverage Status](https://img.shields.io/coveralls/neilstuartcraig/TDPAHSessionPlugin.svg)](https://coveralls.io/r/neilstuartcraig/TDPAHSessionPlugin) 
 [![Dependency Status](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin.svg)](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin) 
@@ -110,7 +110,7 @@ The constructor is very simple and since the module is function-scoped, it requi
 
 ```
 var TDPAHSessionPlugin=require("ah-tdp-session-plugin");
-var acl=new TDPAHSessionPlugin(api); // (where api is the actionhero api instance)
+var session=new TDPAHSessionPlugin(api); // (where api is the actionhero api instance)
 ...
 ```
 
