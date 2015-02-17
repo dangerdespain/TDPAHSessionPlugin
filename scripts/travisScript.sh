@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-echo "hoi";
-
 # Install NPM modules
 npm install;
 
@@ -13,4 +10,4 @@ npm install;
 mkdir -p "./config/plugins";
 
 # Move the existing config file to the plugins dir created above
-mv ./config/TDPAHSessionPluginConfigDefaults.js ./config/plugins/AHTDPSessionPlugin.js;
+mv ./config/TDPAHSessionPluginConfigDefaults.js ./config/plugins/TDPAHSessionPlugin.js;

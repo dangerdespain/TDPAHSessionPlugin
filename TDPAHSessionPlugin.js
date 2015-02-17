@@ -1,3 +1,4 @@
+/*jslint node: true */
 "use strict";
 
 var TDPAHSessionPlugin=function(api)
@@ -10,7 +11,7 @@ var TDPAHSessionPlugin=function(api)
 		// Load config from API (actionhero) object
 		config=api.config.AHTDPSessionPlugin;
 
-		return;// callback();
+		return;
 	};
 	
 	var getSessionKey=function(connection, callback)
@@ -35,7 +36,7 @@ var TDPAHSessionPlugin=function(api)
 		{
 			return ret;
 		}
-	}
+	};
 
 	var getSessionTTL=function(callback)
 	{
@@ -61,7 +62,7 @@ var TDPAHSessionPlugin=function(api)
 		{
 			return  ret;
 		}
-	}
+	};
 
 
 	// Public methods

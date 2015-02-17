@@ -14,5 +14,5 @@ if [ -e ./config/TDPAHSessionPluginConfigDefaults.js ]
 		mkdir -p "../../config/plugins";
 
 		# copy config file to AH
-		cp ./config/TDPAHSessionPluginConfigDefaults.js ../../config/plugins/AHTDPSessionPlugin.js;
+		cp ./config/TDPAHSessionPluginConfigDefaults.js ../../config/plugins/TDPAHSessionPlugin.js;
 fi

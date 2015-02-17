@@ -46,7 +46,7 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
         t:testObj
       };
 
-      done();
+      return done();
     })
   });
 
@@ -54,28 +54,39 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
   {
     actionhero.stop(function(err)
     {
-      done();
+      return done();
     });
   })
 
-  // We need this var in scope for the two tests below
-  var ts=null;
-
   it("Should save a data object onto the session", function(done)
   {
-      api.specHelper.runAction('TDPAHSession/test/saveSession', conn, function(response, connection)
+
+
+console.log("API");
+console.dir(api.actions);
+
+      api.specHelper.runAction('TDPAHSession/saveSession', conn, function(response, connection)
       {
+console.log("TEST OBJ:");        
+console.dir(testObj);
+
+console.log("connec:");        
+console.dir(connection.params);
+
+console.log("SESS:");        
+console.dir(response);
+
         assert.deepEqual(response.sessionData, testObj);
-        done();
+        return done();
       });
   });
 
   it("Should load data from redis successfully", function(done)
   {
-      api.specHelper.runAction('TDPAHSession/test/loadSession', conn, function(response, connection)
+      api.specHelper.runAction('TDPAHSession/loadSession', conn, function(response, connection)
       {
         assert.deepEqual(response.sessionData, testObj);
-        done();
+        return done();
       });
   });
 
@@ -83,7 +94,7 @@ describe('actionhero plugin ah-tdp-session-plugin tests', function()
 // TODO: Add a destroy() test
   // it("Should destroy the session data from redis successfully", function(done)
   // {
-  //     api.specHelper.runAction('TDPAHSession/test/loadTimestamp', conn, function(response, connection)
+  //     api.specHelper.runAction('TDPAHSession/loadTimestamp', conn, function(response, connection)
   //     {
   //       response.sessionData.ts.should.be.type("number");
   //       response.sessionData.ts.should.eql(ts);

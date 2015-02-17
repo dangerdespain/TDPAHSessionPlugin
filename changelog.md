@@ -1,5 +1,9 @@
 #ah-tdp-session-plugin changelog
 
+##v1.0.1-alpha 
+###Non-breaking changes 
+* Trying to fix tests
+
 ##v1.0.0-alpha 
 ###Breaking changes
 * Changed actions.inputs to the [v10 actionhero](https://github.com/evantahler/actionhero/releases/) format
