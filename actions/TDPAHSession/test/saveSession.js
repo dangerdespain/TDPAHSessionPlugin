@@ -4,11 +4,7 @@ var action = {};
 // metadata
 action.name = 'TDPAHSession/test/saveSession';
 action.description = 'I save a data object onto the session';
-action.inputs =
-{
-  'required' : ["t"],
-  'optional' : []
-};
+action.inputs ={};
 action.blockedConnectionTypes = [];
 action.outputExample = {
 }
