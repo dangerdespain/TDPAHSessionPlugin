@@ -6,6 +6,7 @@
 
 # TODO: Work out a way to automatically add the plugin name to the <root>/config/api.js in general.paths []
 
+echo "NPM post install script"
 
 # We'll wrap this in a condition so it can't fail - e.g. on travis
 if [ -e ./config/TDPAHSessionPluginConfigDefaults.js ]
