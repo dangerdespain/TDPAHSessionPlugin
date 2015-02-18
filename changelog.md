@@ -1,5 +1,9 @@
 #ah-tdp-session-plugin changelog
 
+##v1.0.2-alpha 
+###Non-breaking changes 
+* Fixed: removed test code in initialiser
+
 ##v1.0.1-alpha 
 ###Non-breaking changes 
 * Trying to fix tests

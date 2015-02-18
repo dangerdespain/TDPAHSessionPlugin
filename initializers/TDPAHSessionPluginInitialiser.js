@@ -11,10 +11,6 @@ module.exports=
 		var TDPAHSession=require("../TDPAHSessionPlugin.js");
 		var sessionHandler=new TDPAHSession(api);
 
-console.log("session handler");
-console.dir(sessionHandler);
-process.exit();
-
 		// Pre-processor - loads any existing session data
 		api.actions.addPreProcessor(function(connection, actionTemplate, next)
 		{
