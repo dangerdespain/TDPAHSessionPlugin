@@ -10,4 +10,4 @@ npm install;
 mkdir -p "./config/plugins";
 
 # Move the existing config file to the plugins dir created above
-mv ./config/TDPAHSessionPluginConfigDefaults.js ./config/plugins/TDPAHSessionPlugin.js;
+mv ./config/ah-tdp-session-plugin-config.js ./config/plugins/ah-tdp-session-plugin-config.js;

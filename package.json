@@ -7,7 +7,11 @@
 	},
 	"name": "ah-tdp-session-plugin",
 	"description": "A simple session data handler for the actionhero API framework which uses the built-in Redis backend.",
+<<<<<<< HEAD
 	"version": "1.0.2-alpha",
+=======
+	"version": "2.0.0-alpha",
+>>>>>>> dev
 	"repository": 
 	{
 		"type":"git",
@@ -24,7 +28,7 @@
 		"websockets",
 		"api"
 	  ],	 
-	"main": "./TDPAHSessionPlugin.js",
+	"main": "./ah-tdp-session-plugin.js",
 	"dependencies": {
 	},
 	"devDependencies": {
@@ -41,7 +45,8 @@
 	},
 	"engines":
 	{
-	  "node": ">=0.10.x"
+	  "node": ">=0.10.x",
+	  "iojs": "1.x"
 	},
 	"scripts":
 	{
