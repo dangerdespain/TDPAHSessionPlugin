@@ -1,17 +1,19 @@
 #ah-tdp-session-plugin changelog
 
-<<<<<<< HEAD
-##v1.0.2-alpha 
+##v2.0.1-alpha
 ###Non-breaking changes 
-* Fixed: removed test code in initialiser
-=======
+* Fixed some merge mess
+
 ##v2.0.0-alpha 
 ###Breaking changes 
 * Renamed files for clarity (tests, config and main file)
 
 ###Non-breaking changes 
 * Added code climate badge and semver note to readme.md
->>>>>>> dev
+
+##v1.0.2-alpha 
+###Non-breaking changes 
+* Fixed: removed test code in initialiser
 
 ##v1.0.1-alpha 
 ###Non-breaking changes 

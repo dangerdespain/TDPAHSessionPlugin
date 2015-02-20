@@ -1,3 +1,6 @@
+/*jslint node: true */
+"use strict";
+
 exports.default=
 {
 	AHTDPSessionPlugin: function(api)
