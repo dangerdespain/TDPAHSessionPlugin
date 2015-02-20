@@ -1,10 +1,15 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V1.0.1-alpha  
+Master: V2.0.0-alpha  
 
-[![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) [![Coverage Status](https://img.shields.io/coveralls/neilstuartcraig/TDPAHSessionPlugin.svg)](https://coveralls.io/r/neilstuartcraig/TDPAHSessionPlugin) 
+[![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) 
+[![Code Climate](https://codeclimate.com/github/neilstuartcraig/TDPAHSessionPlugin/badges/gpa.svg)](https://codeclimate.com/github/neilstuartcraig/TDPAHSessionPlugin) 
+[![Coverage Status](https://img.shields.io/coveralls/neilstuartcraig/TDPAHSessionPlugin.svg)](https://coveralls.io/r/neilstuartcraig/TDPAHSessionPlugin) 
 [![Dependency Status](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin.svg)](https://gemnasium.com/neilstuartcraig/TDPAHSessionPlugin) 
+
+##Semver
+This project aims to maintain the [semver](http://semver.org/) version numbering scheme.
 
 ##Changelog
 See the [changelog](./changelog.md) file

@@ -9,11 +9,11 @@
 echo "NPM post install script"
 
 # We'll wrap this in a condition so it can't fail - e.g. on travis
-if [ -e ./config/TDPAHSessionPluginConfigDefaults.js ]
+if [ -e ./config/ah-tdp-session-plugin-config.js ]
 	then 
 		# Create (AH) config/plugins dir if it doesn't exist
 		mkdir -p "../../config/plugins";
 
 		# copy config file to AH
-		cp ./config/TDPAHSessionPluginConfigDefaults.js ../../config/plugins/TDPAHSessionPlugin.js;
+		cp ./config/ah-tdp-session-plugin-config.js ../../config/plugins/ah-tdp-session-plugin-config.js;
 fi
