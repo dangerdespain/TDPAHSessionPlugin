@@ -1,7 +1,7 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V2.0.1-alpha  
+Master: V2.0.3  
 
 [![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) 
 [![Code Climate](https://codeclimate.com/github/neilstuartcraig/TDPAHSessionPlugin/badges/gpa.svg)](https://codeclimate.com/github/neilstuartcraig/TDPAHSessionPlugin) 
@@ -49,7 +49,7 @@ TDPAHSessionPlugin is designed specifically for use with the actionHero API fram
 ##Installation
 Installation is relatively simple and is simplest using `npm`:
 
-```
+```sh
 # Install actionhero (skip this if you have already got it installed)
 npm install actionhero
 
@@ -82,7 +82,7 @@ For detailed explanation of the fields, check the userland or [default config fi
 ###Configuration file: environments
 Configuration options can be defined for all or (overridden) for individual environments using the following structure:  
 
-```
+```js
 exports.default=
 {
     AHTDPSessionPlugin: function(api)
@@ -115,7 +115,7 @@ The included actions are for automated testing only and can be ignored.
 ##Constructor
 The constructor is very simple and since the module is function-scoped, it requires the 'new' syntax in the constructor to instantiate a new instance e.g.:
 
-```
+```js
 var TDPAHSessionPlugin=require("ah-tdp-session-plugin");
 var session=new TDPAHSessionPlugin(api); // (where api is the actionhero api instance)
 ...
@@ -206,5 +206,5 @@ The callback function currently receives two arguments:
 
 
 ##License
-TDPAHSessionPlugin is issued under a [Creative Commons attribution share-alike license](http://creativecommons.org/licenses/by-sa/4.0/deed.en_GB).
+ah-tdp-session-plugin is issued under a [Creative Commons attribution share-alike license](http://creativecommons.org/licenses/by-sa/4.0/deed.en_GB).
 This means you can share and adapt the code provided you attribute the original aclor(s) and you share your resulting source code. If, for some specific reason you need to use this library under a different license then please contact me and i'll see what I can do - though I should mention that I am committed to all my code being open-source so closed licenses will almost certainly not be possible.

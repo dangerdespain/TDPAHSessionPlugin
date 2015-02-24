@@ -1,5 +1,13 @@
 #ah-tdp-session-plugin changelog
 
+##v2.0.3 
+###Non-breaking changes
+* Removed the "-alpha" version numver suffix 
+
+##v2.0.2-alpha 
+###Non-breaking changes 
+* Add syntax highlighting to readme.md and tidied
+
 ##v2.0.1-alpha 
 ###Non-breaking changes 
 * Fixed some merge mess
