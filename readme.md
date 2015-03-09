@@ -1,7 +1,7 @@
 #TDPAHSessionPlugin
 
 ##Version
-Master: V2.0.3  
+Master: V2.0.4  
 
 [![Travis CI build status icon](https://api.travis-ci.org/neilstuartcraig/TDPAHSessionPlugin.svg)](https://travis-ci.org/neilstuartcraig/TDPAHSessionPlugin) 
 [![Code Climate](https://codeclimate.com/github/neilstuartcraig/TDPAHSessionPlugin/badges/gpa.svg)](https://codeclimate.com/github/neilstuartcraig/TDPAHSessionPlugin) 

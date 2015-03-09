@@ -1,5 +1,9 @@
 #ah-tdp-session-plugin changelog
 
+##v2.0.4
+###Bug fixes
+* Fixed .travis.yml - moved appropriate elements to `before_script`
+
 ##v2.0.3 
 ###Non-breaking changes
 * Removed the "-alpha" version numver suffix 
